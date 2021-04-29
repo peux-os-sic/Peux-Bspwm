@@ -21,10 +21,8 @@ else
     notify-send "skipping Bspwm installation!"
 fi
 
-if zenity --question --text="Want to copy the configurations?"
+if zenity --question --text="Want to copy the config?"
 then 
-    PASSWD="$(zenity --password --title=Authentication)\n"
-
     echo "changing directory"
     cd ../
     sudo -S cp -r Peux-Bspwm/*/ $HOME/.config/
