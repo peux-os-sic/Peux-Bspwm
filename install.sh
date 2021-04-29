@@ -27,7 +27,7 @@ then
     cd ../
     sudo -S cp -r Peux-Bspwm/*/ $HOME/.config/
     rm -rf Peux-Bspwm
-    notify-send "Copied the configuration"
+    notify-send "Copied the configurations"
 else
     notify-send "skipping the setup!"
 fi
