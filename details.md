@@ -1,0 +1,1 @@
+Peux OS Bspwm 21.05 configurations. You must install the "bspwm" "sxhkd" first in order for this to work. The default panel is tint2, so you might need "tint2" package as well unless you decide to stick with a different panel such as Polybar. The repository can be found at 

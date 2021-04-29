@@ -1,0 +1,60 @@
+#! /bin/sh
+
+# mouse pointer
+xsetroot -cursor_name left_ptr &
+
+# first kill the background-changer that could possibly respawn
+# and start it immediately from the same script - 
+bash ~/.config/system_scripts/pkill_bc
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+## loading workspaces first
+bspc monitor -d I II III IV V VII
+
+# widget daemon - uncomment if required otherwise delete
+#eww daemon &
+
+## bar 
+killall tint2
+tint2 -c ~/.config/tint2/bspwm/bspwm.tint2rc &
+
+## compositor
+picom -b --config ~/.config/picom/picom.conf --experimental-backends
+ 
+## conky widget
+killall conky
+conky -b -d
+
+## lock settings
+xautolock -time 5 -locker ~/.config/system_scripts/session_lock &
+
+# battery
+cbatticon &
+
+# volume
+killall volumeicon
+volumeicon &
+
+# network
+killall nm-applet
+nm-applet &
+
+## attachment alert
+udiskie -A &
+
+## info-center [remove the line below to remove it from autostart]
+#welcomeapp 
+
+## bspc config and rule settings
+
+bspc config border_width         1
+bspc config window_gap          5
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# specify your custom rules here.
+# I have kept one as an example.
+bspc rule -a welcomeapp state=tiled
