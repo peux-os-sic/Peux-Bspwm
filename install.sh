@@ -26,10 +26,10 @@ then
     echo "changing directory"
     cd ../
     sudo -S cp -r Peux-Bspwm/*/ $HOME/.config/
-    rm -rf Peux-Bspwm
     notify-send "Copied the configurations"
 else
     notify-send "skipping the setup!"
 fi
 
+rm -rf /tmp/fetcher/Peux-Bspwm
 notify-send "Done!"
