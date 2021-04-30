@@ -18,7 +18,7 @@ then
     if [ "${pkg}" = "bspwm" ]; then
         notify-send "Bspwm is already installed. Skipping!"   
     else 
-        echo -e $PASSWD | sudo -S pacman -Syy bspwm sxhkd
+        echo -e $PASSWD | sudo -S pacman -Sy bspwm sxhkd
         notify-send "installed Bspwm"
     fi
     if zenity --question --text="Install Tint2 Panel?"
@@ -27,7 +27,7 @@ then
         if [ "${pkg1}" = "tint2" ]; then
             notify-send "Tint2 is already installed. Skipping!"
         else
-            echo -e $PASSWD | sudo -S pacman -Syy tint2
+            echo -e $PASSWD | sudo -S pacman -Sy tint2
             notify-send "installed Tint2"
         fi
     fi
