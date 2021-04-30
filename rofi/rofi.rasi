@@ -8,7 +8,7 @@
 configuration {
 	font:							"Cantarell 10";
     show-icons:                     true;
-	icon-theme: 					"";
+	icon-theme: 					"Papirus";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                true;
@@ -26,13 +26,12 @@ window {
 	border:							0px;
 	border-color:					@ac;
     border-radius:                  5px;
-    height:                         50%;
-	width:							50%;
-    location:                       southwest;
-    x-offset:                        6;
-    y-offset:                        -4%;
+    height:                         99%;
+	width:							30%;
+    location:                       west;
+    x-offset:                       50;
+    y-offset:                       1;
 }
-
 
 entry {
     background-color:               #000000;
@@ -40,7 +39,7 @@ entry {
     expand:                         false;
     horizontal-align:               50%;
     placeholder:                    "Type to search";
-    margin:                         0% 0% 0% 15%;
+    margin:                         0% 0% 0% 5%;
     padding:                        1.5% 5.5%;
     blink:                          true;
 }
