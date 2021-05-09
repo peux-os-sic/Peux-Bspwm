@@ -52,7 +52,7 @@ if zenity --question --text="Want to copy the configurations?"
 then 
     echo "changing directory"
     cd ../
-    sudo -S cp -r Peux-Bspwm/*/ $HOME/.config/
+    cp -r Peux-Bspwm/*/ $HOME/.config/
     notify-send "Copied the configurations"
 else
     notify-send "skipping the setup!"
