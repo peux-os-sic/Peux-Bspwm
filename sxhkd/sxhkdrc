@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
 #########################
-# installer (remove manually)
-#########################
-super + ctrl + c
-	sudo calamares
-
-
-#########################
 # wm independent hotkeys
 #########################
 
