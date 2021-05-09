@@ -43,6 +43,9 @@ nm-applet &
 ## attachment alert
 udiskie -A &
 
+#keylock alert
+indicator-keylock &
+
 ## info-center [remove the line below to remove it from autostart]
 #welcomeapp 
 

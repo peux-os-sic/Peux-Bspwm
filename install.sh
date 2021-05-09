@@ -31,6 +31,16 @@ then
             notify-send "installed Tint2"
         fi
     fi
+    if zenity --question --text="Install Rofi?"
+    then 
+        pkg1="$(pacman -Qq | grep rofi | tail -n1)"
+        if [ "${pkg1}" = "rofi" ]; then
+            notify-send "Rofi is already installed. Skipping!"
+        else
+            echo -e $PASSWD | sudo -S pacman -Syu rofi
+            notify-send "installed Rofi"
+        fi
+    fi
 
 else
     notify-send "skipping Bspwm installation!"
