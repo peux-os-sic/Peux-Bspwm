@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+while true; do
+  feh --randomize --bg-fill /usr/share/backgrounds/*
+  sleep 29m
+done
+sleep 1m

@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+
+# Brightness notification: dunst
+
+icon_path=/usr/share/pixmaps/sun.png
+
+# you can also use a better alternative : light 
+# sudo pacman -S light - and then light -G should output the current brightness
+# this implementation is using xbacklight
+
+function get_brightness {
+    xbacklight -get
+}
+
+function brightness_notification {
+    brightness=`get_brightness`
+    printf -v br_int %.0f "$brightness"
+    echo $br_int
+    bar=$(seq -s "─" $(($br_int / 5)) | sed 's/[0-9]//g')
+    dunstify -r 817 -u normal -i ${icon_path} "Current Brightness: "${br_int}"%" $bar
+}
+
+case $1 in
+    up)
+        xbacklight -inc 5
+        brightness_notification
+        ;;
+    down)
+        xbacklight -dec 5
+        brightness_notification
+	    ;;
+    *)
+        echo "Usage: $0 up | down "
+        ;;
+esac
